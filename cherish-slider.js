@@ -1,8 +1,8 @@
 (function(exports, $) {
   'use strict'
 
-  var _el,
-  intervalId,
+  var _el, //轮播节点
+  intervalId, //定时器id
   _config = {
     index: 0, //轮播初始设置
     time: 1000 //轮播间隔
@@ -12,6 +12,12 @@
     return new Slider.prototype.init(el, opts)
   }
 
+  /**
+   * [_extend 合并配置]
+   * @param  {[type]} o [description]
+   * @param  {[type]} n [description]
+   * @return {[type]}   [description]
+   */
   function _extend (o, n) {
     for (var p in n) {
       if (n.hasOwnProperty(p) && !o.hasOwnProperty(p)) {
@@ -21,6 +27,10 @@
     return o
   }
 
+  /**
+   * [_change 样式修改及动画]
+   * @return {[type]} [description]
+   */
   function _change () {
     var height = _config.index * 100
     $(_el).css('top', '-' + height + 'px')
@@ -28,6 +38,10 @@
     $("#slider-index li").eq(_config.index).addClass('active')
   }
 
+  /**
+   * [_stop 停止]
+   * @return {[type]} [description]
+   */
   function _stop () {
     clearInterval(intervalId)
   }
@@ -35,6 +49,7 @@
   function _start () {
     renderIndex()
 
+    //监听事件
     $('#slider-index li').on('mouseover', function() {
       _stop ()
     })
@@ -53,6 +68,10 @@
     _animation ()
   }
 
+  /**
+   * [_animation 定时器]
+   * @return {[type]} [description]
+   */
   function _animation () {
     intervalId = setInterval(function() {
       _config.index = ((_config.index + 1) >= _config.length) ? (_config.index + 1 - _config.length) : (_config.index + 1)
@@ -60,7 +79,12 @@
     }, _config.time)
   }
 
+  /**
+   * [renderIndex 显示轮播指引]
+   * @return {[type]} [description]
+   */
   function renderIndex() {
+    $('#slider-index').remove()
     var html = [
       '<ol id="slider-index">',
       '</ol>'
@@ -81,12 +105,21 @@
       _config.length = $(_el).children().length - 0
       return this
     },
+
     /**
      * [start 启动轮播]
      * @return {[type]} [description]
      */
     start: function () {
-      _start()
+      _start ()
+    },
+
+    /**
+     * [stop 终止轮播]
+     * @return {[type]} [description]
+     */
+    stop: function () {
+      _stop ()
     }
   }
 
