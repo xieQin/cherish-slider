@@ -3,22 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Cherish swipe</title>
+<title>Cherish Slider</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="" rel="stylesheet">
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  .swipe {
-    width: 100%;
-    height: 100px;
-  }
-</style>
+<link href="./common.css" rel="stylesheet">
+<link rel="stylesheet" href="./main.css">
 </head>
 <body>
-  <div class="swipe"></div>
+  <div class="container">
+    <div class="slider">
+      <ul id="slider-img">
+        <li><img src="https://fuss10.elemecdn.com/e/ea/6aff99c88dbc4eed6b46034886b8fpng.png?imageMogr2/format/webp/quality/85" alt=""></li>
+        <li><img src="https://fuss10.elemecdn.com/2/0a/ceef756987f56fd0ec73b01bd4493png.png?imageMogr2/format/webp/quality/85" alt=""></li>
+        <li><img src="https://fuss10.elemecdn.com/a/20/39f31c22d1f01b35d79b2a06da1ebpng.png?imageMogr2/format/webp/quality/85" alt=""></li>
+      </ul>
+      <ol id="slider-index">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+      </ol>
+    </div>
+  </div>
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script type="text/javascript" src="./cherish-slider.js"></script>
+  <script type="text/javascript">
+    Slider('Hello', {
+      time: 1000
+    }).start()
+  </script>
 </body>
 </html>
