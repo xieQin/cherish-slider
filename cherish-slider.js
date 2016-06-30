@@ -46,6 +46,10 @@
     clearInterval(intervalId)
   }
 
+  /**
+   * [_start 启动]
+   * @return {[type]} [description]
+   */
   function _start () {
     renderIndex()
 
