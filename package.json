@@ -1,14 +1,17 @@
 {
-  "name": "cherish-swipe",
+  "name": "cherish-slider",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "min": "uglifyjs cherish-slider.js -o cherish-slider.min.js"
   },
   "author": "xieq",
   "license": "MIT",
   "devDependencies": {
     "jquery": "^3.0.0"
+  },
+  "dependencies": {
+    "uglify-js": "^2.6.4"
   }
 }
