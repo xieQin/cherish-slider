@@ -1,5 +1,5 @@
 # cherish-slider
-
+依赖jQuery的slider组件
 [online demo](http://2.xieqin.sinaapp.com/slider/)
 
 ### 一、使用
