@@ -2,7 +2,7 @@
 
 [online demo](http://2.xieqin.sinaapp.com/slider/)
 
-# 一、使用
+### 一、使用
 
 ```html
   <div class="slider">
@@ -28,7 +28,7 @@ Slider('#slider-img', {
 }).start()
 ```
 
-# 二、API
+### 二、API
 ```js
 slider.start() //启动轮播
 
