@@ -116,6 +116,7 @@
      */
     start: function () {
       _start ()
+      return this
     },
 
     /**
@@ -124,6 +125,7 @@
      */
     stop: function () {
       _stop ()
+      return this
     }
   }
 
